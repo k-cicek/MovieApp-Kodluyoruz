@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@200;400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #ffffff;
+  --secondary-color: rgb(212, 207, 207);
+}
+
+body {
+  background-color: var(--primary-color);
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+}
+
+header {
+  padding: 6rem;
+  display: flex;
+}
+
+
+.search {
+  background-color: transparent;
+  border: 1px solid #dedede;
+  display: flex;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 16px;
+  color: #fff;
+  font-family: inherit;
+  box-shadow: 0.2px 4px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.search:focus {
+  outline: 0;
+  background-color: var(--secondary-color);
+}
+
+.search::placeholder {
+  color: rgba(128, 128, 128, 0.774);
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+.movie {
+  width: 170px;
+  margin: 18px;
+  border-radius: 20px;
+  box-shadow: 0.2px 4px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.movie img {
+  width: 100%;
+  height: 150px;
+}
+
+.movie_info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem 1rem;
+}
+
+.movie_info h3 {
+  font-size: 14px;
+  margin-top: 0;
+}
+
+.movie_info span {
+  background-color: var(--secondary-color);
+  padding: 0.25rem 0.5rem;
+  margin-top: -10px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.movie_info span.red {
+  color: rgb(172, 59, 59);
+}
+
+.movie_info span.green {
+  color: rgb(83, 160, 83);
+}
+
+.movie_info span.orange {
+  color: orange;
+}
+
+.movie_info span.blue {
+  color: rgba(11, 202, 202, 0.788);
+}
+
+.movie_date {
+  margin-bottom: 25px;
+  margin-top: -20px;
+  margin-left: 15px;
+  font-size: 14px;
+  color: rgba(128, 128, 128, 0.774);
+}
+
+@media screen and (max-width: 629px) {
+  main {
+    display: grid;
+    grid-template-columns: 200px auto;
+  }
+
+  header {
+    margin-right: 5px;
+  }
+
+
+}
+
+@media screen and (max-width: 404px) {
+  main {
+    display: grid;
+    grid-template-columns: auto;
+  }
+
+  header {
+    position: relative;
+  }
+}
