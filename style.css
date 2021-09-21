@@ -16,7 +16,7 @@ body {
 }
 
 header {
-  max-width: 970px;
+  max-width: 1030px;
   margin: 0 auto;
   padding: 6rem;
   display: flex;
@@ -45,12 +45,14 @@ header {
 }
 
 main {
-  display: flex;
+  display: grid;
+  grid-template-columns: 215px 215px 215px 215px;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
 .movie {
-  width: 170px;
+  width: 180px;
   margin: 18px;
   border-radius: 20px;
   box-shadow: 0.2px 4px 5px rgba(0, 0, 0, 0.1);
@@ -71,7 +73,7 @@ main {
 }
 
 .movie_info h3 {
-  font-size: 14px;
+  font-size: 13px;
   margin-top: 0;
 }
 
@@ -80,7 +82,7 @@ main {
   padding: 0.25rem 0.5rem;
   margin-top: -10px;
   border-radius: 4px;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .movie_info span.red {
@@ -103,7 +105,7 @@ main {
   margin-bottom: 25px;
   margin-top: -20px;
   margin-left: 15px;
-  font-size: 14px;
+  font-size: 13px;
   color: rgba(128, 128, 128, 0.774);
 }
 
@@ -114,14 +116,24 @@ main {
     
   }
 }
+@media screen and (max-width: 860px) {
+  main {
+    display: grid;
+    grid-template-columns: 215px 215px;
+  }
+  header {
+    max-width: 585px;
+    margin: 0 auto;
+  }
+}
 
 @media screen and (max-width: 629px) {
   main {
     display: grid;
-    grid-template-columns: 200px auto;
+    grid-template-columns: 215px 215px;
   }
   header {
-    max-width: 550px;
+    max-width: 585px;
     margin: 0 auto;
     
   }
