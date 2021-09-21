@@ -16,10 +16,12 @@ body {
 }
 
 header {
+  max-width: 970px;
+  margin: 0 auto;
   padding: 6rem;
   display: flex;
+  justify-content: end;
 }
-
 
 .search {
   background-color: transparent;
@@ -32,7 +34,6 @@ header {
   font-family: inherit;
   box-shadow: 0.2px 4px 5px rgba(0, 0, 0, 0.1);
 }
-
 
 .search:focus {
   outline: 0;
@@ -106,17 +107,24 @@ main {
   color: rgba(128, 128, 128, 0.774);
 }
 
+@media screen and (max-width: 969px) {
+  header {
+    max-width: 980px;
+    margin: 0 auto;
+    
+  }
+}
+
 @media screen and (max-width: 629px) {
   main {
     display: grid;
     grid-template-columns: 200px auto;
   }
-
   header {
-    margin-right: 5px;
+    max-width: 550px;
+    margin: 0 auto;
+    
   }
-
-
 }
 
 @media screen and (max-width: 404px) {
@@ -124,8 +132,8 @@ main {
     display: grid;
     grid-template-columns: auto;
   }
-
   header {
-    position: relative;
+    justify-content: center;
+    
   }
 }
