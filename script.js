@@ -22,9 +22,9 @@ function showMovies(data) {
 
  data.forEach(movie => {
   const { title, poster_path, vote_average, release_date} = movie
-  const moviEl = document.createElement("div");
-  moviEl.classList.add("movie");
-  moviEl.innerHTML = `
+  const movieEl = document.createElement("div");
+  movieEl.classList.add("movie");
+  movieEl.innerHTML = `
   <img src="${IMG_URL+poster_path}" alt="${title}">
 
    <div class="movie_info">
@@ -33,13 +33,13 @@ function showMovies(data) {
    </div>
 
    <div class="movie_date">
-    ${release_date}
+   ${release_date.slice(0, 4)}
    </div>
   `
-
-  main.appendChild(moviEl);
+  main.appendChild(movieEl);
  })
 }
+
 
 function getColor(vote) {
  if(vote >= 8){
@@ -50,3 +50,5 @@ function getColor(vote) {
   return "red"
  }
 }
+
+
