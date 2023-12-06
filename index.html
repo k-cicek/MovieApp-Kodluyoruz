@@ -1,35 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 
-<head>
- <meta charset="UTF-8">
- <meta http-equiv="X-UA-Compatible" content="IE=edge">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <link rel="stylesheet" href="style.css">
- <title>Movie List App</title>
-</head>
+    <title>Movie List App</title>
+  </head>
 
-<body>
- <header>
-  <form id="form">
-   <input type="text" placeholder="Search" id="search" class="search">
-  </form>
- </header>
+  <body>
+    <header>
+      <h1>Moview</h1>
+      <form id="form">
+        <input
+          type="text"
+          placeholder="Search Movies"
+          id="search"
+          class="search"
+          autocomplete="off"
+        />
+        <button type="button" id="cancelButton" class="cancel">
+          <i class="fa fa-close"></i>
+        </button>
+      </form>
+    </header>
 
- <main id="main">
-  <div class="movie">
-  
-  </div>
- </main>
- <div class="pagination">
-  <div class="page disabled" id="prev">Prev</div>
-  <div class="current" id="current">1</div>
-  <div class="page" id="next">Next</div>
- </div>
+    <main id="main"></main>
 
+    <footer>
+      <ul>
+        <li>
+          <a href="https://www.themoviedb.org/" target="_blank"
+            >The Movie Database</a
+          >
+        </li>
+        <li>
+          <a href="https://www.themoviedb.org/documentation/api" target="_blank"
+            >API</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.themoviedb.org/documentation/api/terms-of-use"
+            target="_blank"
+            >Terms of Use</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.themoviedb.org/documentation/api/privacy-policy"
+            target="_blank"
+            >Privacy Policy</a
+          >
+        </li>
+      </ul>
+      <small> © 2023 - AOT </small>
+    </footer>
 
- <script src="script.js
- "></script>
-</body>
-
+    <script src="script.js"></script>
+  </body>
 </html>

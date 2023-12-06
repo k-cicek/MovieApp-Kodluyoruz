@@ -2,11 +2,13 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 :root {
-  --primary-color: #ffffff;
-  --secondary-color: rgb(212, 207, 207);
+  --primary-color: #0f171e;
+  --secondary-color: #1a242e;
 }
 
 body {
@@ -16,28 +18,49 @@ body {
 }
 
 header {
-  max-width: 1130px;
-  margin: 0 auto;
-  padding: 6rem;
+  background-color: var(--secondary-color);
+  padding: 1rem;
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  letter-spacing: 5px;
+  color: #fff;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  position: relative;
 }
 
 .search {
-  background-color: transparent;
-  border: 1px solid #dedede;
-  display: flex;
+  background-color: var(--primary-color);
+  border: 0;
   padding: 0.5rem 1rem;
-  border-radius: 50px;
-  font-size: 16px;
+  margin-left: 0.5rem;
+  width: 100%;
+  border-radius: 1rem;
+  font-size: 1.1rem;
   color: #fff;
   font-family: inherit;
   box-shadow: 0.2px 4px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+.cancel {
+  position: absolute;
+  right: 1rem;
+  color: #fff;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 .search:focus {
   outline: 0;
-  background-color: var(--secondary-color);
+  transform: scale(1.025);
 }
 
 .search::placeholder {
@@ -45,35 +68,31 @@ header {
 }
 
 main {
-  display: grid;
-  grid-template-columns: 240px 240px 240px 240px;
+  display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-}
-
-.movie:hover {
-  transform: scale(1.07);
-
+  justify-content: space-evenly;
 }
 
 .movie {
-  width: 210px;
-  margin: 18px;
-  border-radius: 20px;
+  width: 300px;
+  margin: 1rem;
+  background-color: var(--secondary-color);
   box-shadow: 0.2px 4px 5px rgba(0, 0, 0, 0.1);
   position: relative;
+  border-radius: 3px;
   overflow: hidden;
 }
 
 .movie img {
   width: 100%;
-  height: 180px;
 }
 
 .movie_info {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 0.5rem 1rem 1rem;
+  letter-spacing: 0.5px;
 }
 
 .movie_info h3 {
@@ -82,14 +101,11 @@ main {
 }
 
 .movie_info span {
-  height: 20px;
-  width: 30px;
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-  font-size: 11px;
-  text-align: center;
-
+  border-radius: 1rem;
+  font-size: 90%;
+  font-weight: bold;
 }
 
 .movie_info span.red {
@@ -108,12 +124,61 @@ main {
   color: rgba(11, 202, 202, 0.788);
 }
 
-.movie_date {
-  margin-bottom: 25px;
-  margin-top: -20px;
-  margin-left: 15px;
-  font-size: 12px;
-  color: rgba(128, 128, 128, 0.774);
+.movie_overview {
+  background-color: #566b84;
+  color: #111;
+  padding: 2rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  max-height: 100%;
+  transform: translateY(101%);
+  overflow-y: auto;
+  transition: transform 0.5s ease-in-out;
+}
+.movie:hover .movie_overview {
+  transform: translateY(0);
+}
+
+.movie_overview h3 {
+  margin-bottom: 0.5rem;
+  border-bottom: 2px solid #70b8f3;
+  width: 50%;
+}
+
+footer {
+  background-color: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+footer h3 {
+  letter-spacing: 5px;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+footer ul li {
+  list-style-type: none;
+  display: inline;
+  margin-right: 1rem;
+}
+
+footer ul li a {
+  text-decoration: none;
+  color: #2066a0;
+  font-size: 0.9rem;
+}
+
+footer small {
+  color: #8197a4;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
 }
 
 .pagination {
@@ -137,44 +202,4 @@ main {
 .page.disabled {
   cursor: not-allowed;
   color: grey;
-}
-
-
-
-@media screen and (max-width: 969px) {
-  header {
-    max-width: 980px;
-    margin: 0 auto;
-  }
-}
-@media screen and (max-width: 860px) {
-  main {
-    display: grid;
-    grid-template-columns: 240px 240px;
-  }
-  header {
-    max-width: 850px !important;
-    margin: 0 auto;
-  }
-}
-
-@media screen and (max-width: 629px) {
-  main {
-    display: grid;
-    grid-template-columns: 240px 240px;
-  }
-  header {
-    max-width: 585px;
-    margin: 0 auto;
-  }
-}
-
-@media screen and (max-width: 404px) {
-  main {
-    display: grid;
-    grid-template-columns: auto;
-  }
-  header {
-    justify-content: center;
-  }
 }
